@@ -1,5 +1,8 @@
 # Sydney Weather Prediction API
 
+**Student Name:** Tengxiao Nong  
+**Student ID:** 25215322
+
 This project provides a machine learning API for predicting short-term weather comfort and hazard levels in Sydney, Australia.
 
 The project contains two prediction tasks:
