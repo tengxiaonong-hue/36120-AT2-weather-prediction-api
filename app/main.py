@@ -15,7 +15,8 @@ app = FastAPI(
 
 
 BASE_DIR = Path(__file__).resolve().parent
-MODEL_DIR = BASE_DIR / "models"
+PROJECT_DIR = BASE_DIR.parent
+MODEL_DIR = PROJECT_DIR / "models"
 
 
 cci_model = joblib.load(
