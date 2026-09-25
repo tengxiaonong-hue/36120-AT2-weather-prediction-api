@@ -1,1 +1,16 @@
+[project]
+name = "sydney-weather-prediction-api"
+version = "1.0.0"
+description = "FastAPI deployment for Climate Comfort Index and Weather Hazard Category prediction"
+readme = "README.md"
+requires-python = ">=3.11"
 
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pandas",
+    "scikit-learn",
+    "xgboost",
+    "joblib",
+    "pydantic"
+]
