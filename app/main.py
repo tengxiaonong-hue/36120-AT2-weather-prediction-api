@@ -1,6 +1,6 @@
 
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 import pandas as pd
 import joblib
 from datetime import date
@@ -38,13 +38,37 @@ whc_features = joblib.load(
 
 class WeatherInput(BaseModel):
     date: date
-    temperature_2m: float
-    relative_humidity_2m: float
-    precipitation: float
-    cloud_cover: float
-    wind_speed_10m: float
-    wind_gusts_10m: float
-    snowfall: float
+
+    temperature_2m: float = Field(
+        ge=-60,
+        le=60
+    )
+
+    relative_humidity_2m: float = Field(
+        ge=0,
+        le=100
+    )
+
+    precipitation: float = Field(
+        ge=0
+    )
+
+    cloud_cover: float = Field(
+        ge=0,
+        le=100
+    )
+
+    wind_speed_10m: float = Field(
+        ge=0
+    )
+
+    wind_gusts_10m: float = Field(
+        ge=0
+    )
+
+    snowfall: float = Field(
+        ge=0
+    )
 
 
 def prepare_features(data: WeatherInput, feature_list):
